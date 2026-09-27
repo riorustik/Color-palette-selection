@@ -39,6 +39,7 @@ body {
         padding: 10px;
         border-radius: 10px;
         transition: bacground 0.3s;
+        outline: none;
 
         &:hover {
             background: rgba(0, 0, 0, 0.1);
