@@ -30,4 +30,19 @@ body{
             cursor: pointer;
         }
     }
+
+    button{
+        border: none;
+        background: transparent;
+        font-size: 1.2rem;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        transition: bacground 0.3s;
+
+        &:hover{
+            background: rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+    }
 }
