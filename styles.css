@@ -18,4 +18,16 @@ body{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+
+    h2{
+        padding: 10px;
+        color: white;
+        border-radius: 10px;
+        transition: bacground 0.3s;
+
+        &:hover{
+            background: rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+    }
 }
