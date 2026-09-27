@@ -10,9 +10,19 @@ const cols = document.querySelectorAll('.col');
 // }
 
 document.addEventListener('keydown', event => {
+    event.preventDefault();
    if( event.code.toLocaleLowerCase() === 'space'){
        setRandomColors()
    }
+})
+
+document.addEventListener('click', e => {
+    const button = e.target.closest('button[data-type="lock"]');
+    if (!button) return;
+
+    const icon = button.querySelector('i');
+    icon.classList.toggle('fa-lock-open');
+    icon.classList.toggle('fa-lock');
 })
 
 function setRandomColors() {
