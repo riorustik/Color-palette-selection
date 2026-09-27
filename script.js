@@ -27,10 +27,12 @@ document.addEventListener('click', e => {
 
 function setRandomColors() {
     cols.forEach((col) => {
+        const isLoced = col.querySelector('i').classList.contains('fa-lock');
         const text = col.querySelector('h2');
         const btn = col.querySelector('button');
-
         const color = chroma.random() //generateRandomColor();
+
+        if(isLoced) return;
 
         text.textContent = color;
         col.style.background = color;
