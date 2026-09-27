@@ -17,12 +17,16 @@ document.addEventListener('keydown', event => {
 })
 
 document.addEventListener('click', e => {
-    const button = e.target.closest('button[data-type="lock"]');
-    if (!button) return;
+    const type = e.target.dataset.type;
 
-    const icon = button.querySelector('i');
-    icon.classList.toggle('fa-lock-open');
-    icon.classList.toggle('fa-lock');
+    if(type === 'lock'){
+        const node =
+            e.target.tagName.toLocaleLowerCase() === 'i' ? e.target : e.target.challenge[0];
+        node.classList.toggle('fa-lock-open');
+        node.classList.toggle('fa-lock');
+    } else if(type === 'copy'){
+        copyToClickBoard(e.target.textContent)
+    }
 })
 
 function setRandomColors() {
@@ -40,6 +44,10 @@ function setRandomColors() {
         setTextColor(text, color);
         setTextColor(btn, color);
     })
+}
+
+function copyToClickBoard(text){
+    return navigator.clipboard.writeText(text);
 }
 
 function setTextColor(text, color) {
