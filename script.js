@@ -1,4 +1,4 @@
-const cols = document.querySelectorAll('.col')
+const cols = document.querySelectorAll('.col');
 
 function generateRandomColor() {
     const hexCodes = '0123456789ABCDEF';
@@ -11,7 +11,11 @@ function generateRandomColor() {
 
 function setRandomColors(){
     cols.forEach((col) => {
-        col.style.background = generateRandomColor()
+        const text = col.querySelector('h2');
+        const color = generateRandomColor();
+
+        text.textContent = color;
+        col.style.background = color;
     })
 }
 
