@@ -9,6 +9,12 @@ const cols = document.querySelectorAll('.col');
 //     return `#${color}`
 // }
 
+document.addEventListener('keydown', event => {
+   if( event.code.toLocaleLowerCase() === 'space'){
+       setRandomColors()
+   }
+})
+
 function setRandomColors() {
     cols.forEach((col) => {
         const text = col.querySelector('h2');
